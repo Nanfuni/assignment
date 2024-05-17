@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assinment</name>
+    </assembly>
+    <members>
+        <member name="M:Assignment1.Controllers.AnswerController.SubmitAnswers(System.Collections.Generic.List{Assignment1.DTOs.AnswerDto})">
+             <summary>
+             Submit answers to questions.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/answer
+                 [
+                     {
+                         "questionId": "1",
+                         "response": "Yes"
+                     },
+                     {
+                         "questionId": "2",
+                         "response": "Blue"
+                     }
+                 ]
+            
+             </remarks>
+             <param name="answerDtos">List of answer DTOs</param>
+             <returns>Returns Ok if answers are successfully submitted</returns>
+             <response code="200">Returns Ok if answers are successfully submitted</response>
+             <response code="400">If answerDtos is null, empty, or contains invalid data</response>
+        </member>
+        <member name="M:Assignment1.Controllers.QuestionController.CreateQuestion(Assignment1.DTOs.QuestionDto)">
+            <summary>
+             Create a new question.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/question
+                 {
+                    "type": "Dropdown",
+                    "description": "What is your favorite color?",
+                    "options": ["Red", "Blue", "Green"]
+                 }
+            
+             </remarks>
+             <param name="questionDto">Question data</param>
+             <returns>A newly created question</returns>
+             <response code="201">Returns the newly created question</response>
+        </member>
+        <member name="M:Assignment1.Controllers.QuestionController.UpdateQuestion(System.String,Assignment1.DTOs.QuestionDto)">
+             <summary>
+             Update an existing question.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/question
+                 {
+                    "type": "Dropdown",
+                    "description": "What is your favorite color?",
+                    "options": ["Red", "Blue", "Green"]
+                 }
+            
+             </remarks>
+             <param name="id">The ID of the question to update</param>
+             <param name="questionDto">Updated question data</param>
+             <returns>No content</returns>
+             <response code="204">No content</response>
+        </member>
+        <member name="M:Assignment1.Controllers.QuestionController.GetQuestion(System.String)">
+            <summary>
+            Get a question by its ID.
+            </summary>
+            <param name="id">The ID of the question to retrieve</param>
+            <returns>The requested question</returns>
+            <response code="200">Returns the requested question</response>
+            <response code="404">If the question is not found</response>
+        </member>
+        <member name="M:Assignment1.Controllers.QuestionController.GetQuestions">
+            <summary>
+            Get all questions.
+            </summary>
+            <returns>All questions</returns>
+            <response code="200">Returns all questions</response>
+        </member>
+        <member name="M:Assignment1.Controllers.QuestionController.DeleteQuestion(System.String)">
+            <summary>
+            Delete a question by its ID.
+            </summary>
+            <param name="id">The ID of the question to delete</param>
+            <returns>Result of the delete operation</returns>
+            <response code="200">Returns the result of the delete operation</response>
+        </member>
+    </members>
+</doc>
